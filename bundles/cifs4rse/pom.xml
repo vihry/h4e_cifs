@@ -1,0 +1,41 @@
+<project>
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>h4e</groupId>
+ <artifactId>cifs4rse</artifactId>
+ <version>1.0.0-SNAPSHOT</version>
+ <packaging>eclipse-plugin</packaging>
+
+ <parent>
+   <groupId>h4e</groupId>
+   <artifactId>configuration</artifactId>
+   <version>1.0.0-SNAPSHOT</version>
+  <relativePath>../../releng/configuration</relativePath>
+ </parent>
+ 
+ <properties>
+ </properties>
+
+ <repositories></repositories>
+
+ <dependencyManagement>
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/jcifs/jcifs -->
+		<dependency>
+		    <groupId>jcifs</groupId>
+		    <artifactId>jcifs</artifactId>
+		    <version>1.3.17</version>
+		</dependency>
+	
+	</dependencies>
+ </dependencyManagement>
+
+ <build>
+  <plugins>
+
+  </plugins>
+ </build>
+ 
+ 
+</project>
+

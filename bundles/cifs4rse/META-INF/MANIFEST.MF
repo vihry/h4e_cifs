@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: h4e.cifs4rse
+Bundle-SymbolicName: cifs4rse;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: h4e.cifs4rse.plugin.Activator
+Bundle-Vendor: h4e
+Require-Bundle: org.eclipse.ui,
+  org.eclipse.core.runtime,
+  org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
