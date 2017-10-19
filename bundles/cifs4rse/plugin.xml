@@ -2,19 +2,79 @@
 <?eclipse version="3.4"?>
 <plugin>
 
+   <!-- property page -->
    <extension
          point="org.eclipse.ui.propertyPages">
       <page
-            name="Common Internet FileSystem preoperties"
+            name="Common Internet FileSystem"
             nameFilter="*.*"
             class="h4e.cifs4rse.properties.CIFSPropertyPage"
             id="h4e.cifs4rse.properties.samplePropertyPage">
          <enabledWhen>
-            <instanceof
-                  value="org.eclipse.core.resources.IFile">
+            <instanceof value="org.eclipse.rse.core.subsystems.ISubSystem"  >
+            	<!-- value="h4e.cifs4rse.model.CIFSResource" -->
+                  <!-- value="org.eclipse.core.resources.IFile" -->
             </instanceof>
          </enabledWhen>
       </page>
    </extension>
 
+   <!-- ======================================= -->
+   <!-- SubSystem Configuration                 -->
+   <!-- ======================================= -->
+   <extension point="org.eclipse.rse.core.subsystemConfigurations">
+        <configuration
+             id="samples.subsystems.factory"
+             systemTypeIds="org.eclipse.rse.systemtype.linux;org.eclipse.rse.systemtype.unix;org.eclipse.rse.systemtype.windows"
+             name="CIFS shares"
+             description="This subsystem allows you to work with CIFS."
+             class="h4e.cifs4rse.subsystems.CIFSSubSystemConfiguration"
+             category="database"
+             vendor="hrybtech">
+        </configuration>
+   </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+   		<objectContribution
+            adaptable="false"
+            id="tsoiyatshing.myrseextensions.objectContribution1"
+            objectClass="h4e.cifs4rse.model.CIFSResource">
+            <!--  objectClass="org.eclipse.rse.core.filters.ISystemFilterReference"
+            objectClass="org.eclipse.rse.core.subsystems.ISubSystem">
+            objectClass="org.eclipse.rse.subsystems.shells.core.subsystems.IRemoteCmdSubSystem" -->
+            <!-- objectClass="org.eclipse.rse.subsystems.files.core.subsystems.IRemoteFileSubSystem"
+            objectClass="org.eclipse.rse.subsystems.files.core.subsystems.IRemoteFile" -->
+         <action
+               class="h4e.cifs4rse.actions.CopyAction"
+               enablesFor="1"
+               id="tsoiyatshing.myrseextensions.actions.RestoreFromBackupAction"
+               label="Restore from Backup AZZ!">
+         </action>
+         </objectContribution>
+   </extension>
+   
+   <!-- ======================================= -->
+   <!-- Remote Object Property Pages            -->
+   <!-- ======================================= -->
+   <!--
+   <extension point="org.eclipse.ui.propertyPages">
+       <page name="Folder Contents Z"
+               class="cifs4rse.ui.propertypages.InfoPropertyPage"
+               id="samples.ui.PropertyPage1">
+           <enabledWhen>
+               <instanceof value="org.eclipse.rse.subsystems.files.core.subsystems.IRemoteFile"/>                        
+           </enabledWhen>
+           <filter name="isDirectory" value="true"/>  
+        </page>
+   </extension>    
+
+	<extension point="org.eclipse.ui.preferencePages">
+      <page
+            name="%PreferencePage.Datastore"
+            category="org.eclipse.rse.ui.preferences.RemoteSystemsPreferencePage"
+            class="cifs4rse.ui.propertypages.DStorePreferencePage"
+            id="org.eclipse.rse.connectorservice.DStorePreferences">
+      </page>
+    </extension> -->
+    
 </plugin>

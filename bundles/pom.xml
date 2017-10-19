@@ -12,6 +12,7 @@
     </parent>
 
     <modules>
+    	<module>cifsdom</module>
         <module>cifs4rse</module>
     </modules>
 </project>
