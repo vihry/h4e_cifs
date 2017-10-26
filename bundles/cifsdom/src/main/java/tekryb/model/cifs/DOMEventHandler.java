@@ -1,7 +1,5 @@
 package tekryb.model.cifs;
 
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -20,7 +18,7 @@ public abstract class DOMEventHandler implements Runnable {
 	}
 	
 	public void setEvent( Event val ) {
-		val = _event;
+		_event = val;
 	}
 	
 	public Event getEvent( ) {
@@ -28,7 +26,7 @@ public abstract class DOMEventHandler implements Runnable {
 	}
 	
 	public void setRunnable( Runnable val ) {
-		val = _runnable;
+		_runnable = val;
 	}
 	
 	public Runnable getRunnable( ) {
